@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Seat Selection</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Traveling Tour</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Bus Seat Selection</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- Seat container with shadow -->
+        <div class="seat-container">
+          <!-- Generating seats dynamically -->
+          <div id="seats"></div>
+          <a id="proceedBtn" class="btn btn-primary" href="seat bill details.html" onclick="proceedToNextPage()" disabled>Submit</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <footer>
+    <div class="container">
+      <p>&copy; 2024 Travelling Tour. All rights reserved.</p>
+    </div>
+  </footer> -->
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // Number of rows and seats per row
+    const numRows = 6;
+    const leftSeats = 2;
+    const rightSeats = 3;
+    const gap = 1;
+
+    // Function to generate seats
+    function generateSeats() {
+      const seatsDiv = document.getElementById('seats');
+      seatsDiv.innerHTML = ''; // Clear previous seats
+
+      const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      let seatNumber = 0;
+
+      for (let row = 0; row < numRows; row++) {
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'seat-row';
+
+        // Generate seats for left side
+        for (let seat = 0; seat < leftSeats; seat++) {
+          const seatLabel = alphabet.charAt(row) + (seatNumber + 1);
+          const seatDiv = createSeatElement(seatLabel, 'empty');
+          rowDiv.appendChild(seatDiv);
+          seatNumber++;
+        }
+
+        // Add gap between left and right sides
+        const gapDiv = document.createElement('div');
+        gapDiv.className = 'gap';
+        rowDiv.appendChild(gapDiv);
+
+        // Generate seats for right side
+        for (let seat = 0; seat < rightSeats; seat++) {
+          const seatLabel = alphabet.charAt(row) + (seatNumber + 1);
+          const seatDiv = createSeatElement(seatLabel, 'empty');
+          rowDiv.appendChild(seatDiv);
+          seatNumber++;
+        }
+
+        seatsDiv.appendChild(rowDiv);
+      }
+
+      // Mark some seats as reserved
+      markReservedSeats(['A3', 'C11', 'C12']);
+    }
+
+    // Function to create a seat element
+    function createSeatElement(label, status) {
+      const seatDiv = document.createElement('div');
+      seatDiv.className = 'seat ' + status;
+      seatDiv.textContent = label;
+      seatDiv.dataset.label = label;
+      seatDiv.addEventListener('click', toggleSeatSelection);
+      return seatDiv;
+    }
+
+    // Function to toggle seat selection
+    function toggleSeatSelection(event) {
+      const seat = event.target;
+      if (!seat.classList.contains('reserved')) {
+        seat.classList.toggle('selected');
+        checkSeatSelection();
+      }
+    }
+
+    // Function to check if any seat is selected
+    function checkSeatSelection() {
+      const selectedSeats = document.querySelectorAll('.selected');
+      const proceedBtn = document.getElementById('proceedBtn');
+      if (selectedSeats.length > 0) {
+        proceedBtn.removeAttribute('disabled');
+      } else {
+        proceedBtn.setAttribute('disabled', 'disabled');
+      }
+    }
+
+    // Function to mark reserved seats
+    function markReservedSeats(seats) {
+      seats.forEach(seat => {
+        const seatElement = document.querySelector('.seat[data-label="' + seat + '"]');
+        if (seatElement) {
+          seatElement.classList.remove('empty');
+          seatElement.classList.add('reserved');
+        }
+      });
+    }
+
+    // Generate seats on page load
+    generateSeats();
+  </script>
+</body>
+</html>

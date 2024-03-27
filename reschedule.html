@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reschedule Ticket Booking</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Traveling Tour</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reschedule.html">Reschedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cancel.html">cancel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="container-shadow reschedule-form">
+      <h2>Reschedule Ticket Booking</h2>
+      <form>
+        <div class="form-group">
+          <label for="bookingId">Booking ID</label>
+          <input type="text" class="form-control" id="bookingId" placeholder="Enter Booking ID">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="newDate">New Date</label>
+          <input type="date" class="form-control" id="newDate">
+        </div>
+      </form>
+      <a href="Resch. seat selection.html">
+      <button type="submit" class="btn btn-primary">Reschedule Booking</button></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!-- <footer class="mt-5">
+    <div class="container">
+      <p>&copy; 2022 Bus Booking. All rights reserved.</p>
+    </div>
+  </footer> -->
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+.body{
+    background-color: #f8f9fa;
+}
+.navbar {
+    background-color: #1978a0 !important;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+/* Container with shadow */
+.container-shadow {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Bus card */
+.bus-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bus-card:hover {
+    background-color: #e9ecef;
+}
+
+.bus-card h4 {
+    margin-bottom: 10px;
+}
+
+.bus-card p {
+    margin-bottom: 5px;
+}
+
+.bus-card .btn {
+    width: 100%;
+}
+
+
+/* Customizing container */
+
+/* Customizing form */
+#bookingForm {
+  max-width: 400px; /* Limiting form width for better readability */
+  margin: 0 auto; /* Centering form horizontally */
+}
+
+#bookingForm h2 {
+  font-size: 1.8rem; /* Increasing font size for form title */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .container {
+    margin-top: 20px; /* Adjusting top margin for smaller screens */
+  }
+
+  #bookingForm {
+    padding: 10px; /* Adjusting padding for smaller screens */
+  }
+}
+
+
+
+
+/* Seat selection */
+.seat-container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .seat {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #ccc;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-weight: bold; */
+    /* font-size: 1.2rem; */
+    transition: all 0.3s ease;
+  }
+  .selected {
+    background-color: #007bff;
+    /* color: #fff; */
+    border-color: #007bff;
+  }
+  .empty {
+    background-color: #f8f9fa;
+  }
+  .reserved {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+    cursor: not-allowed;
+  }
+  .seat-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .left-side {
+    margin-right: 20px;
+  }
+  .right-side {
+    margin-left: 20px;
+  }
+  .gap {
+    width: 40px;
+  }
+  /* Button */
+  #proceedBtn {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    margin-top: 20px;
+  }
+  #proceedBtn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  /* Mobile styles */
+  @media (max-width: 576px) {
+    .seat {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+    .seat-container {
+      padding: 10px;
+    }
+    #proceedBtn {
+      font-size: 1rem;
+      padding: 8px 20px;
+    }
+  }
+  footer {
+    background-color: #1978a0 !important;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+  }
+  footer p {
+    margin-bottom: 0;
+  }
+
+
+  .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .payment-option input[type="radio"] {
+    display: none;
+  }
+  .payment-option label {
+    /* font-weight: bold; */
+    /* white-space: 10px; */
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0;
+  }
+  .payment-option label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .payment-option input[type="radio"]:checked + label:before {
+    background-color: #007bff;
+  }
+  /* Proceed button */
+  .proceed-button {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .proceed-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .proceed-button button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Confirmation section */
+  .confirmation-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .confirmation-section h2 {
+    margin-left: 10px;
+  }
+  .confirmation-icon {
+    color: #28a745;
+    font-size: 36px;
+  }
+
+
+  /* Reschedule form */
+  .reschedule-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .reschedule-form h2 {
+    margin-bottom: 20px;
+  }
+  .reschedule-form label {
+    font-weight: bold;
+  }
+  .reschedule-form .form-control {
+    margin-bottom: 20px;
+  }
+  .reschedule-form .btn-primary {
+    width: 100%;
+  }
+
+  /* Confirmation message */
+  .confirmation-message {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .confirmation-message h2 {
+    margin-bottom: 20px;
+  }
+  .confirmation-message p {
+    margin-bottom: 20px;
+  }
+  .confirmation-message .btn-primary {
+    width: 100%;
+  }
+
+  /* Cancellation confirmation */
+  .confirmation {
+    text-align: center;
+  }
+  .confirmation img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .confirmation h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  .confirmation p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+   /* Cancellation form */
+   .cancel-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .cancel-form h2 {
+    margin-bottom: 20px;
+  }
+  .cancel-form label {
+    font-weight: bold;
+  }
+  .cancel-form .form-control {
+    margin-bottom: 20px;
+  }
+  .cancel-form .btn-primary {
+    width: 100%;
+  }
+
+
+  .ticket-details {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  .ticket-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .ticket-info {
+    margin-bottom: 20px;
+  }
+  .ticket-info strong {
+    font-weight: bold;
+  }
+
+
+  /* Track bus container */
+  .track-bus-container {
+    margin-top: 50px;
+  }
+  .map-image img {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  .bus-details {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  .bus-details h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  .bus-info {
+    margin-bottom: 10px;
+  }
+  .bus-info strong {
+    font-weight: bold;
+  }

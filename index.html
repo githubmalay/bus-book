@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveling Tour</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+   <link rel="stylesheet" href="styles.css">
+   <style>
+    .containers {
+      margin-left: auto;
+      margin-right: auto;
+  margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding shadow outside container */
+  border-radius: 10px; /* Adding border-radius for a rounded look */
+  padding: 20px; /* Adding padding for space between content and shadow */
+}
+
+   </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Traveling Tour</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reschedule.html">Reschedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cancel.html">Cancel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="view ticket.html">View Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="track bus.html">Track Bus</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="containers">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">Booking</h2>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="origin">Origin:</label>
+            <input type="text" class="form-control" id="origin" placeholder="Enter origin">
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination:</label>
+            <input type="text" class="form-control" id="destination" placeholder="Enter destination">
+          </div>
+          <div class="form-group">
+            <label for="date">Date of Travel:</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <div class="form-group">
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" class="form-control" id="passengers" min="1" max="10">
+          </div>
+        </form>
+        <a href="available.html">
+            <button type="submit" class="btn btn-primary btn-block">Search Buses</button></a>
+  
+      </div>
+    </div>
+  </div>
+  <!-- <footer>
+    <div class="containers">
+      <p>&copy; 2024 Travelling Tour. All rights reserved.</p>
+    </div>
+  </footer> -->
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Retrieve form data
+      const origin = document.getElementById("origin").value;
+      const destination = document.getElementById("destination").value;
+      const date = document.getElementById("date").value;
+      const passengers = document.getElementById("passengers").value;
+      
+      // You can add validation here before proceeding
+      
+      // Redirect to search page with query parameters
+      window.location.href = `search.html?origin=${origin}&destination=${destination}&date=${date}&passengers=${passengers}`;
+    });
+  </script>
+</body>
+</html>
